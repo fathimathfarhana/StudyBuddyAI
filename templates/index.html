@@ -1,1 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyBuddy AI</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .chat-container {
+            width: 100%;
+            max-width: 600px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            height: 80vh;
+            overflow: hidden;
+        }
+        .chat-header {
+            background-color: #2f80ed;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .chat-box {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            border-bottom: 1px solid #eee;
+            background-color: #fafafa;
+        }
+        .message {
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            border-radius: 8px;
+            max-width: 80%;
+            line-height: 1.5;
+        }
+        .user-message {
+            background-color: #2f80ed;
+            color: white;
+            margin-left: auto;
+            border-bottom-right-radius: 2px;
+        }
+        .ai-message {
+            background-color: #e0e0e0;
+            color: #333;
+            margin-right: auto;
+            border-bottom-left-radius: 2px;
+        }
+        .input-area {
+            display: flex;
+            padding: 15px;
+            background: white;
+        }
+        .input-area input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+            outline: none;
+        }
+        .input-area button {
+            background-color: #2f80ed;
+            color: white;
+            border: none;
+            padding: 0 20px;
+            margin-left: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+        .input-area button:hover {
+            background-color: #1b66ca;
+        }
+    </style>
+</head>
+<body>
 
+<div class="chat-container">
+    <div class="chat-header">StudyBuddy AI 🎓</div>
+    <div class="chat-box" id="chatBox">
+        <div class="message ai-message">Hi! I'm your StudyBuddy. Ask me any question, and let's learn together!</div>
+    </div>
+    <form class="input-area" id="chatForm" action="/ask" method="POST">
+        <input type="text" name="question" id="userInput" placeholder="Ask me anything..." required>
+        <button type="submit">Ask AI</button>
+    </form>
+</div>
+
+</body>
+</html>
